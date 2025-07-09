@@ -1,16 +1,55 @@
-# myapp
+# Hướng Dẫn Thiết Lập Ứng Dụng DeeplinkCatcher
 
-A new Flutter project.
+## Yêu cầu hệ thống
 
-## Getting Started
+- Flutter SDK (>=3.x.x)
+- Dart SDK
+- Android Studio hoặc VS Code
+- Thiết bị Android/iOS hoặc trình giả lập
 
-This project is a starting point for a Flutter application.
+## Các bước thiết lập
 
-A few resources to get you started if this is your first Flutter project:
+### 1. Clone dự án
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+```bash
+git clone https://github.com/your-username/DeeplinkCatcher.git
+cd DeeplinkCatcher
+```
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+### 2. Cài đặt các package phụ thuộc
+
+```bash
+flutter pub get
+```
+
+### 3. Chạy ứng dụng
+
+- **Android:**
+
+    ```bash
+    flutter run
+    ```
+
+- **iOS:**  
+    Đảm bảo đã cài đặt CocoaPods, sau đó:
+
+    ```bash
+    cd ios
+    pod install
+    cd ..
+    flutter run
+    ```
+
+### 4. Thiết lập deeplink (tuỳ chọn)
+
+- Cấu hình deeplink trong `AndroidManifest.xml` và `Info.plist` theo tài liệu Flutter.
+
+## Kiểm tra Deeplink ứng dụng bất kỳ
+```bash
+adb shell dumpsys package <package-name>
+```
+
+## Tham khảo
+
+- [Tài liệu Flutter](https://flutter.dev/docs)
+- [Hướng dẫn cấu hình deeplink](https://docs.flutter.dev/development/ui/navigation/deep-linking)
